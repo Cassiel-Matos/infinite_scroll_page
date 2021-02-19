@@ -16,6 +16,7 @@ driver = webdriver.Chrome()
 
 #link do site que deseja abrir
 driver.get("https://www.facebook.com​")
+
 #tempo só para esperar carregar no navegador
 time.sleep(2)
 
@@ -35,20 +36,20 @@ caixabusca.submit()
 #tempo do scroll
 SCROLL_PAUSE_TIME = 0.5
 Y = 400
-# Get scroll height
+
 # Obter altura de rolagem
 last_height = driver.execute_script("return document.body.scrollHeight")
 
 while True:
     Y = Y + 400
-    # Scroll down to bottom
+
     # Role para baixo 
     driver.execute_script("window.scrollTo(0, window.scrollY + 200);")
-    # Wait to load page
+   
     # Espere para carregar a página
     time.sleep(SCROLL_PAUSE_TIME)
 
-    # Calculate new scroll height and compare with last scroll height
+
     # Calcule a nova altura de rolagem e compare com a última altura de rolagem
     new_height = driver.execute_script("return document.body.scrollHeight")
 
